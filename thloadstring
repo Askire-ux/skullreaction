@@ -1,0 +1,52 @@
+local DiscordLib =
+    loadstring(game:HttpGet "https://raw.githubusercontent.com/Askire-ux/trevorhub/main/discord")()
+
+
+loadstring(game:HttpGet "https://raw.githubusercontent.com/Askire-ux/trevorhubuifixes/main/thuifixes")() -- Help Menu n shit
+
+local win = DiscordLib:Window("TrevorHub Beta Build")
+
+local serv = win:Server("TrevorHub", "http://www.roblox.com/asset/?id=6031075938")
+
+local btns = serv:Channel("Streaming")
+
+btns:Seperator()
+
+btns:Toggle(
+    "User ID/Name",
+    false,
+    function(bool)
+        if bool then
+
+                game.Players.LocalPlayer.PlayerGui.WorldInfo.InfoFrame.CharacterInfo.Character.Visible = false
+                game.Players.LocalPlayer.PlayerGui.WorldInfo.InfoFrame.CharacterInfo.Slot.Text = "TrevorHub Beta Build"
+                game.Players.LocalPlayer.PlayerGui.WorldInfo.InfoFrame.CharacterInfo.Slot.TextColor3  = Color3.fromRGB(92, 211, 255)
+
+        else
+           game.Players.LocalPlayer.PlayerGui.WorldInfo.InfoFrame.CharacterInfo.Character.Text = "it brok"
+            game.Players.LocalPlayer.PlayerGui.WorldInfo.InfoFrame.CharacterInfo.Slot.Text = "it brok"
+           
+          end
+    end
+)
+
+
+local spoofer = serv:Channel("Scamming")
+
+
+spoofer:Dropdown(
+    "Weapon Enchant Spoofer",
+    {"+ Heroism", "+ Sear", "+ Metal", "+ Wild", "+ Stone", "+ Blazing", "+ Detonation", "+ Providence's Thorns", "+ Grim", "+ Storm", "+ Deferred", "+ Tainted Sorrow", "+ Chill", "+ Elasticity", "+ Vampirism", "+ Gluttony", "+ Obfuscation", "+ Curse of Yun'Shul", "+ Curse of the No-Life King", "+ Curse of the Bloodthirsty", "+ Curse of the Umbral Knight"},
+    function(bool)
+       local tool = game.Players.LocalPlayer.Character:FindFirstChildWhichIsA("Tool")
+       tool.ToolTip = tool.ToolTip.. "\n".. tostring(bool)
+end
+
+)
+
+
+
+game.Players.LocalPlayer.PlayerGui.WorldInfo.InfoFrame.ServerInfo.ServerRegion.Text = "TrevorHub"
+
+
+
